@@ -1,0 +1,16 @@
+name: Check Terraform Version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  terraform-version:
+    name: Terraform Version Check
+    runs-on: self-hosted  # or 'ubuntu-latest' if not using a self-hosted runner
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Show Terraform Version
+      run: terraform version
